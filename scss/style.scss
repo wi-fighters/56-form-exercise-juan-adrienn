@@ -5,47 +5,90 @@
 
 }
 
+html {
+    font-size: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f9f5f0;
+    color: #321313;
 
-.main-container {
-    margin: 0 auto;
-    max-width: 40rem;
-    background-color: rgb(240, 240, 151);
-    padding: 0.2rem;
+    .main-container {
+        margin: 0 auto;
+        max-width: 40rem;
+        background-color: rgb(240, 240, 151);
+        padding: 0.2rem;
+
+        .form-container {
+            margin: 0 auto;
+            max-width: 40rem;
+            padding: 2rem;
+            /* add these properties to your existing ruleset */
+            background-color: #f2ead3;
+            border-radius: 1rem;
+            padding: 1rem 2rem 3rem;
+
+            fieldset {
+                margin-bottom: 2rem;
+                padding: 1rem;
+                border: 1px dotted #321313;
+                border-radius: 0.3rem;
+            }
+
+            label {
+                display: block;
+                margin-top: 0.6rem;
+            }
+
+            label:not(:last-of-type) {
+                margin-right: 1ch;
+            }
+
+            input,
+            select {
+                width: 100%;
+            }
+
+            .inline-container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .inline-container * {
+                // .inline-container * means all descendants
+                // 7. flex-grow: 1;flex-shrink: 0;flex-basis: 15rem;  >>or:
+                flex: 1 0 15rem;
+            }
+
+            // .8
+            input[type="submit"] {
+                /* all states */
+                cursor: pointer;
+                transition: 0.2s ease-out;
+            }
+
+            // input[type="submit"]:hover {  >>or
+            &:hover {
+                /* hover state */
+                transform: scaleX(1.03) scaleY(1.1);
+            }
+
+            input[type="submit"]:active {
+                /* active state */
+                background-color: #dfd1a7;
+            }
+        }
+
+
+    }
 }
 
-.form-container {
-    margin: 0 auto;
-    max-width: 40rem;
-    padding: 2rem;
-}
+@media only screen and (min-width: 550px) {
+    form {
+        width: 90%;
+    }
 
-input,
-select {
-    width: 100%;
-}
-
-.inline-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.inline-container * {
-    flex: 1 0 15rem;
-}
-
-input[type="submit"] {
-    /* all states */
-    cursor: pointer;
-    transition: 0.2s ease-out;
-}
-
-input[type="submit"]:hover {
-    /* hover state */
-    transform: scaleX(1.03) scaleY(1.1);
-}
-
-input[type="submit"]:active {
-    /* active state */
-    background-color: #dfd1a7;
+    .names {
+        max-width: 90%;
+        flex-direction: row;
+    }
 }

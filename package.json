@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    // This here was changed for SASS
     "watch-css": "dart-sass --watch scss/style.scss style.css --style compressed"
+
   },
   "repository": {
     "type": "git",
